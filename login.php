@@ -25,30 +25,60 @@
 		</div>
 		<!--The links to login/signup are on the other side of the header-->
 		<div class="login">
-			<a href="login.php">Log in</a> <a href="signup.php">Sign up</a>
+			<?php
+			require 'loginout.php';
+			IsLoggedIn();
+			?>
 		</div>
 	</div>
 	<!-- Search pages-->
-	<form onsubmit="ValidateEmail()">
+	<form onsubmit="ValidateEmail()" method="post">
  		<div class="container">
-    			<label for="uname"><b>Username</b></label>
-    			<input type="text" placeholder="Enter Email" id="email" required><br>
-	
+    			<b>Username</b><input type="text" placeholder="Enter Email" id="email" name="email" required><br>
     			<label for="psw"><b>Password</b></label>
-    			<input type="password" placeholder="Enter Password" id="psw" required><br>
-
-    			<button type="submit">Login</button>
-   			<label><br>
-      				<input type="checkbox" checked="checked" id="remember"> Remember me
-   			</label>
+    			<input type="password" placeholder="Enter Password" id="psw" name="password" required><br>
+				<label><br>
+      			<input type="checkbox" checked="checked" id="remember"> Remember me
+				</label><br>
+				<button type="submit" name="button">Login</button><br>
+				<button type="button" class="cancelbtn">Cancel</button><br>
+				<span class="psw"><a href="#">Forgot password?</a></span>
   		</div>
 	</form>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</form>
+	<?php
+	if(isset($_POST["button"])){
+		//Set the database connection details
+		$servername = "localhost";
+		$dbname="hotspot_database";
+		$username = "root";
+		$pword = "";
+		//Hash the password to test it against the stored hash
+		$password=hash('SHA256',$_POST["password"]);
+		
+		try {
+				$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pword);
+				// set the PDO error mode to exception
+				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				//Create an SQL statement that retrieves the email and password
+				$sql = $conn->prepare("SELECT email, password FROM members WHERE email='".$_POST["email"]."'");
+				// use execute() because no results are returned
+				$sql->execute();
+				//Save the result into a variable
+				$result=$sql->fetchAll(PDO::FETCH_ASSOC);
+				if($result[0]['password']==$password){
+					session_start();
+					$_SESSION['loggedin'] = true;
+					$_SESSION['username'] = $result[0]['email'];
+					
+				}			
+			}
+			catch(PDOException $e)
+				{
+				echo $e;
+				}
+			$conn = null;	
+	}
+	?>
 	<!--The footer of the webpage-->
 	<div class="footer">
 	<p>Webpage created by Jean-Luc Danoy and Azure Hutchings, 2018.</p>
