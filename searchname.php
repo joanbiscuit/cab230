@@ -6,7 +6,7 @@
 </head>
 <body>
 <!--The wrapper wraps around the entire webpage to keep it a certain size-->
-<div class=wrapper">	
+<div class="wrapper">	
 	<!--The header class contains the name at the top of the page and the links to other pages-->
 	<div class="header">
 		<h1>Brisbane Hotspot Reviewer</h1>
@@ -31,17 +31,15 @@
 	<!-- Search inputs-->
 	<div class="content">
 		<form onsubmit="searchPageValidate();">
-			Name: <input type="text" id="name"><br>
-			Suburb: <select>
-			<!--Hardcoded dropdown menu is for demonstration purposes only-->
-						<option value="Carindale">Carindale</option>
-						<option value="Calamvale">Calamvale</option>
-						<option value="Corinda">Corinda</option>
-					</select>
-						<br>
-			Postcode: <input type="text" id="postcode"><br>
+			Name: <input type="text" id="selectname"><br>
+			Suburb: 
+			<!-- Dropdown Menu Options-->
+			<?php include 'select_options.php';?>
+			Postcode: <input type="text" id="selectpostcode"><br>
 			Rating: <input type="number" id="rating" min="1" max="5" step="0.01"><br>
-			<button type="submit">Search!</button>
+			<button type="submit" id ="submitsearch" href="results.php">Search!</button>
+			<!-- Connects to Database-->
+			<?php include 'selectwifi.php';?>
 		</form>
 	</div>
 	<!--The footer of the webpage-->

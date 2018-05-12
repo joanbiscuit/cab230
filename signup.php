@@ -6,7 +6,7 @@
 </head>
 <body>
 <!--The wrapper wraps around the entire webpage to keep it a certain size-->
-<div class=wrapper">	
+<div class="wrapper">	
 	<!--The header class contains the name at the top of the page and the links to other pages-->
 	<div class="header">
 		<h1>Brisbane Hotspot Reviewer</h1>
