@@ -11,6 +11,7 @@ function ValidateEmail()
 			}
 }
 
+
 function ValidatePasswordSignup()
 {
 	var password = (document.getElementById("psw").value)
@@ -40,13 +41,12 @@ function ValidatePasswordSignup()
 		}
 }
 
-function ValidateSignup()
-{
+function ValidateSignup(){
 	if (ValidateEmail() && ValidatePasswordSignup()){
-		return(true)
+		return(true);
 	}
 	else{
-		return(false)
+		return(false);	
 	}
 }
 function searchPageValidate(){
@@ -54,13 +54,14 @@ function searchPageValidate(){
 	var regtest = new RegExp(/[0-9]{4}/);
 	if (regtest.test(pc) || pc==""){
 		//Opening this window is for demonstration purposes only
-		window.open("results.php");
+		location.replace("results.php");
 	}
 	else {
 		window.alert("Enter a valid postcode");
 		return false;
 	}
 }
+/*
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(nearestHotspot);
@@ -69,7 +70,7 @@ function getLocation() {
     }
 }
 function nearestHotspot(position){
-
+	
 	var lat2=[-27.37893,-27.50942285,-27.44394629,-27.37396641,-27.56353,-27.31797261,-27.47724];
 	var lng2=[153.04461,153.0333218,152.9870981,153.0783234,152.89372,153.0378735,152.97599];
 	var i=0;
@@ -95,15 +96,17 @@ function nearestHotspot(position){
 		}
 	}
 	var hotspot={lat:newLat, lng:newLng};
+	var mylocation={lat:lat1,lng:lng1};
 	var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 10,
           center:  hotspot
         })
 	var marker = new google.maps.Marker({
-          position: hotspot,
-          map: map
+          position: hotspot;
+		  position: mylocation;
+          map: map;	
         });
-}
+}*/
 
 function individualHotspot(){
     if (navigator.geolocation) {
