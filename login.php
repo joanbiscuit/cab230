@@ -26,7 +26,7 @@
 		<!--The links to login/signup are on the other side of the header-->
 		<div class="login">
 			<?php
-			require 'loginout.php';
+			include 'loginout.php';
 			IsLoggedIn();
 			?>
 		</div>
@@ -40,45 +40,12 @@
 				<label><br>
       			<input type="checkbox" checked="checked" id="remember"> Remember me
 				</label><br>
-				<button type="submit" name="button">Login</button><br>
+				<button type="submit" name="button">Login</button><br><?php include 'loginscript.php' ?><br>
 				<button type="button" class="cancelbtn">Cancel</button><br>
 				<span class="psw"><a href="#">Forgot password?</a></span>
   		</div>
 	</form>
-	<?php
-	if(isset($_POST["button"])){
-		//Set the database connection details
-		$servername = "localhost";
-		$dbname="hotspot_database";
-		$username = "root";
-		$pword = "";
-		//Hash the password to test it against the stored hash
-		$password=hash('SHA256',$_POST["password"]);
-		
-		try {
-				$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pword);
-				// set the PDO error mode to exception
-				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				//Create an SQL statement that retrieves the email and password
-				$sql = $conn->prepare("SELECT email, password FROM members WHERE email='".$_POST["email"]."'");
-				// use execute() because no results are returned
-				$sql->execute();
-				//Save the result into a variable
-				$result=$sql->fetchAll(PDO::FETCH_ASSOC);
-				if($result[0]['password']==$password){
-					session_start();
-					$_SESSION['loggedin'] = true;
-					$_SESSION['username'] = $result[0]['email'];
-					
-				}			
-			}
-			catch(PDOException $e)
-				{
-				echo $e;
-				}
-			$conn = null;	
-	}
-	?>
+	
 	<!--The footer of the webpage-->
 	<div class="footer">
 	<p>Webpage created by Jean-Luc Danoy and Azure Hutchings, 2018.</p>

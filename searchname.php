@@ -30,16 +30,14 @@
 	</div>
 	<!-- Search inputs-->
 	<div class="content">
-		<form onsubmit="searchPageValidate();">
-			Name: <input type="text" id="selectname"><br>
+		<form onsubmit="searchPageValidate();" method="get" action="results.php">
+			Name: <input type="text" name="selectname"><br>
 			Suburb: 
 			<!-- Dropdown Menu Options-->
 			<?php include 'select_options.php';?>
-			Postcode: <input type="text" id="selectpostcode"><br>
+			Postcode: <input type="text" name="selectpostcode"><br>
 			Rating: <input type="number" id="rating" min="1" max="5" step="0.01"><br>
-			<button type="submit" id ="submitsearch" href="results.php">Search!</button>
-			<!-- Connects to Database-->
-			<?php include 'selectwifi.php';?>
+			<button type="submit" name="submitsearch">Search!</button>
 		</form>
 	</div>
 	<!--The footer of the webpage-->
