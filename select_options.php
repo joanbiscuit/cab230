@@ -3,7 +3,7 @@
    	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     try {
 		$sql = $pdo->prepare('SELECT suburb FROM items');
-		echo "<select name = 'suburb' id ='selectsuburb'>
+		echo "<select name = 'selectsuburb'>
 			";
 		$sql->execute();
 		$data = $sql->fetchAll();
