@@ -12,7 +12,7 @@
 		//Return the data
 		$data=$statement->fetchAll(PDO::FETCH_ASSOC);
 		//Create a div
-        echo "<div class='content'>";
+        echo "<div class='contents'>";
             foreach ($data as $row){
                 ?><div class='result'>
                     <h2><?=$row["name"]?></h2>

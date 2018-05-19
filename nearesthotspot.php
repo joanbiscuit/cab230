@@ -8,22 +8,22 @@
 </head>
 <body>
 <!--The wrapper wraps around the entire webpage to keep it a certain size-->
-<div class=wrapper">	
+<div class="wrapper">	
 	<!--The header class contains the name at the top of the page and the links to other pages-->
 	<div class="header">
 		<h1>Brisbane Hotspot Reviewer</h1>
 		<hr>
 		<!--The links to other pages in the website-->
-		<div class="links">
-			<a href="homepage.php">Homepage</a> <a href="">Hotspots</a> <a href="">Recent reviews</a> 
-			<!--Dropdown for the search buttons-->
-			<div class="dropdown">
-				<a href="">Search</a>
-				<div class="dropdown-content">
-					<a href="searchname.php">Keywords</a>
-					<a href="nearesthotspot.php">Nearest hotspot</a>
-			    </div>
-			</div>
+	</div>
+	<div class="topnav">
+		<a href="homepage.php">Homepage</a> <a href="">Hotspots</a> <a href="">Recent reviews</a> 
+		<!--Dropdown for the search buttons-->
+		<div class="dropdown">
+			<a href="">Search</a>
+			<div class="dropdown-content">
+				<a href="searchname.php">Keywords</a>
+				<a href="nearesthotspot.php">Nearest hotspot</a>
+		    </div>
 		</div>
 		<!--The links to login/signup are on the other side of the header-->
 		<div class="login">
@@ -34,20 +34,19 @@
 		</div>
 	</div>
 	<!-- Search pages-->
-	<div class="content" method="get">
+	<div class="contents" method="get">
 		<form>
 			<button name="search">Search</button>
 		</form>
 		<?php
 		include 'nearesthotspotphp.php';
 		?>
-		
-		
 		<div id="map"></div>
 	</div>
 	<!--The footer of the webpage-->
 	<div class="footer">
-		<p>Webpage created by Jean-Luc Danoy and Azure Hutchings, 2018.</p>
+		<!--Links of all the Webpages-->
+		<p>&copy; 2018 Brisbane Hotspot Reviewer</p>
 	</div>
 </div>
 </body>

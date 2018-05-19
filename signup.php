@@ -11,17 +11,17 @@
 	<div class="header">
 		<h1>Brisbane Hotspot Reviewer</h1>
 		<hr>
-		<!--The links to other pages in the website-->
-		<div class="links">
-			<a href="homepage.php">Homepage</a> <a href="">Hotspots</a> <a href="">Recent reviews</a> 
-			<!--Dropdown for the search buttons-->
-			<div class="dropdown">
-				<a href="">Search</a>
-				<div class="dropdown-content">
-					<a href="searchname.php">Keywords</a>
-					<a href="nearesthotspot.php">Nearest hotspot</a>
-			    </div>
-			</div>
+	</div>
+	<!--The links to other pages in the website-->
+	<div class="topnav">
+		<a href="homepage.php">Homepage</a> <a href="">Hotspots</a> <a href="">Recent reviews</a> 
+		<!--Dropdown for the search buttons-->
+		<div class="dropdown">
+			<a href="">Search</a>
+			<div class="dropdown-content">
+				<a href="searchname.php">Keywords</a>
+				<a href="nearesthotspot.php">Nearest hotspot</a>
+		    </div>
 		</div>
 		<!--The links to login/signup are on the other side of the header-->
 		<div class="login">
@@ -32,31 +32,30 @@
 		</div>
 	</div>
 	<form onsubmit="ValidateSignup();" method="post">
-  		<div class="container">
-    			<h1>Sign Up</h1>
+  		<div class="contents">
+    		<h2>SIGN UP</h2>
   			<p>Please fill in this form to create an account.</p>
-    			<hr>
-
-    			<label for="email"><b>Email</b></label>
-    			<input type="text" placeholder="Enter Email" id="email" name="email" value="<?php
+    		<hr>
+	   		<label for="email"><b>EMAIL</b></label><br>
+    		<input type="text" placeholder="Enter Email" id="email" name="email" value="<?php
 				if (isset($_POST['email'])){	
 					echo htmlspecialchars($_POST['email']);
 				}?>"
 				required><br>
 
-				<label for="psw"><b>Password</b></label>
+				<label for="psw"><b>PASSWORD</b></label><br>
     			<input type="password" placeholder="Enter Password" id="psw" name="password" value="<?php
 				if (isset($_POST['email'])){	
 					echo htmlspecialchars($_POST['password']);
 				}?>" required><br>
 
-    			<label for="psw-repeat"><b>Repeat Password</b></label>
+    			<label for="psw-repeat"><b>REPEAT PASSWORD</b></label><br>
     			<input type="password" placeholder="Repeat Password" id="psw-repeat" name="psw-repeat" value="<?php
 				if (isset($_POST['email'])){	
 					echo htmlspecialchars($_POST['psw-repeat']);
 				}?>"required><br>
 				
-				<label for="bday"><b>Birthday</b></label>
+				<label for="bday"><b>DATE OF BIRTH</b></label><br>
 				<input type="date" placeholder="dd/mm/yyyy" id="bday" name="dob" value="<?php
 				if (isset($_POST['email'])){	
 					echo htmlspecialchars($_POST['dob']);
@@ -73,57 +72,14 @@
    			</div>
   		</div>
 	</form>
-<?php
-require 'validateemail.php';
-$errors=array();
-$errors2=array();
-//If the button has been pressed
-if(isset($_POST["button"])){
-	//Validate the email
-	ValidateEmail($errors, $_POST,'email');
-	//Return an error if the email is invalid (get rid of this once testing is over)
-	if ($errors){
-		echo "Errors:<br/>";
-		foreach ($errors as $field => $error){
-				echo "$field $error<br/>";
-		}
-	}
-	else{	
-		ValidatePassword($errors2, $_POST, 'password', 'psw-repeat');
-		if ($errors2){
-			echo "Errors:<br/>";
-			foreach ($errors2 as $field2 => $error2){
-				echo "$field2 $error2<br/>";
-			}
-		}
-		else{
-			$servername = "localhost";
-			$dbname="hotspot_database";
-			$username = "root";
-			$pword = "";
-			$password=hash('SHA256',$_POST["password"]);
-			try {
-				$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pword);
-				// set the PDO error mode to exception
-				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				$sql = $conn->prepare("INSERT INTO members (email, password, birthday) VALUES ('".$_POST["email"]."','".$password."','".$_POST["dob"]."')");
-				// use exec() because no results are returned
-				$sql->execute();
-				
-				}
-			catch(PDOException $e)
-				{
-				echo $e;
-				}
-			$conn = null;	
-		}
-	} 
-}
-
-?> 
+	<!--Validate SignUp page-->
+	<?php
+		require 'validatesignup.php';
+	?>
 	<!--The footer of the webpage-->
 	<div class="footer">
-	<p>Webpage created by Jean-Luc Danoy and Azure Hutchings, 2018.</p>
+		<!--Links of all the Webpages-->
+		<p>&copy; 2018 Brisbane Hotspot Reviewer</p>
 	</div>
 </div>
 </body>

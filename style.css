@@ -1,20 +1,26 @@
 .wrapper{
-	width:auto;
+	width: auto;
 }
-form {
-	padding: 16px;
+body {
+	background-image: url("brisbanecity.jpg");
+	background-repeat: no-repeat;
+	background-size: fill;
+	background-position: center;
+	background-attachment: fixed;
+}
+.contents {
+	/* Center */
+	margin: auto;
+	width: 50%;
+	padding: 10px;
 	text-align:left;
+	margin-top: 100px;
 	background-color: #d1d1e0;
 	/* border properties */
 	border-style: hidden;
 	border-radius: 25px;
 	height: auto;
-	width: 550px;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	margin-top: -100px;
-	margin-left: -300px;
+	align-content: center;
 }
 .header {
 	overflow: hidden;
@@ -31,9 +37,17 @@ form {
 	top: 0;
 	left: 0;
 }
+h2 {
+	text-align:center;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
 /* The navigation bar container */
 .topnav {
 	background-color:#e0e0d1;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+    color: black;
+	border: none;
 }
 /* Navigation bar links */
 .topnav a{
@@ -50,8 +64,55 @@ form {
 	color:white;
 	text-decoration:none;
 }
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropbtn {
+    background-color:#e0e0d1;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+	border: none;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:black;
+	color:white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: black;
+	color: red;
+}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+	background-color:black;
+	color: white;
+}
 .login {
 	float: right;
+}
+label {
+	text-align: center;
+	color: grey;
 }
 .footer {
 	overflow:hidden;
@@ -64,58 +125,11 @@ form {
 	position: fixed;
 	left: 0;
 	bottom: 0;
-	width: 100%
-}
-table {
-	align: center;
-	/* cell spacing */
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-th {
-	/* This covers the th elements */
-}
-tr {
-	/*This covers the tr elements */
-	align: center;
-}
-th, td {
-	/* cellpadding */
-	padding: 0;
-	text-align: center;
-	width: 100px;
+	width: 100%;
 }
 .search h3{
 	text-align:center;
 	background-color:#e0e0d1;
-}
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color:black;
-	color:white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 3;
-}
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: black;}
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
 }
 .checked{
 	color:gold;
