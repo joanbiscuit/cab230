@@ -16,10 +16,12 @@
 		<!--The links to other pages in the website-->
 	</div>
 	<div class="topnav">
-		<a href="homepage.php">Homepage</a> <a href="">Hotspots</a> <a href="">Recent reviews</a> 
+		<a href="homepage.php">Homepage</a> 
+		<a href="">Hotspots</a> 
+		<a href="">Recent reviews</a> 
 		<!--Dropdown for the search buttons-->
 		<div class="dropdown">
-			<a href="">Search</a>
+			<button class="dropbtn">Search</button>
 			<div class="dropdown-content">
 				<a href="searchname.php">Keywords</a>
 				<a href="nearesthotspot.php">Nearest hotspot</a>
@@ -36,7 +38,8 @@
 	<!-- Search pages-->
 	<div class="contents" method="get">
 		<form>
-			<button name="search">Search</button>
+			<h2>Nearest Hotspot</h2>
+			<button name="search" class="searchbtn">Search</button>
 		</form>
 		<?php
 		include 'nearesthotspotphp.php';

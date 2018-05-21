@@ -15,12 +15,14 @@ body {
 	padding: 10px;
 	text-align:left;
 	margin-top: 100px;
+	margin-bottom: 100px;
 	background-color: #d1d1e0;
 	/* border properties */
 	border-style: hidden;
 	border-radius: 25px;
 	height: auto;
 	align-content: center;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .header {
 	overflow: hidden;
@@ -40,10 +42,11 @@ body {
 h2 {
 	text-align:center;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	color: blue;
 }
 /* The navigation bar container */
 .topnav {
-	background-color:#e0e0d1;
+	background-color: #f0f0f5;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 16px;
     color: black;
@@ -70,7 +73,7 @@ h2 {
     display: inline-block;
 }
 .dropbtn {
-    background-color:#e0e0d1;
+    background-color:#f0f0f5;
     color: black;
     padding: 16px;
     font-size: 16px;
@@ -110,10 +113,6 @@ h2 {
 .login {
 	float: right;
 }
-label {
-	text-align: center;
-	color: grey;
-}
 .footer {
 	overflow:hidden;
 	background-color:#5c5c8a;
@@ -127,9 +126,65 @@ label {
 	bottom: 0;
 	width: 100%;
 }
-.search h3{
-	text-align:center;
-	background-color:#e0e0d1;
+/*Log in and sign up*/
+input[type=text], input[type=password], input[type=date], input[type=number], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+/*Log in and sign up submit button*/
+.submitbtn, .cancelbtn, .searchbtn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+/*Add a hover effect for cancel and submit buttons*/
+.submitbtn:hover, .cancelbtn:hover, .searchbtn:hover {
+	opacity: 0.8;
+}
+/*Extra style for the cancel button*/
+.cancelbtn {
+	width: auto;
+	padding: 10px 18px;
+	background-color: #f44336;
+}
+.searchbtn{
+	width: auto;
+	padding: 10px 18px;
+	background-color: #5c5c8a;
+	float: center;
+}
+/* The "Forgot password" text */
+span.link {
+    float: right;
+    padding-top: 16px;
+}
+.container {
+	background-color:#a3a3c2;
+	/* Center */
+	margin: auto;
+	padding: 10px;
+	/* border properties */
+	border-style: hidden;
+	border-radius: 25px;
+	height: auto;
+	align-content: center;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.suburboption {
+	position: relative;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h3 {
+	text-align: center;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .checked{
 	color:gold;

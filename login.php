@@ -14,10 +14,12 @@
 	</div>
 	<!--The links to other pages in the website-->
 	<div class="topnav">
-		<a href="homepage.php">Homepage</a> <a href="">Hotspots</a> <a href="">Recent reviews</a> 
+		<a href="homepage.php">Homepage</a> 
+		<a href="hotspots.php">Hotspots</a> 
+		<a href="">Recent reviews</a> 
 		<!--Dropdown for the search buttons-->
 		<div class="dropdown">
-			<a href="">Search</a>
+			<button class="dropbtn">Search</button>
 			<div class="dropdown-content">
 				<a href="searchname.php">Keywords</a>
 				<a href="nearesthotspot.php">Nearest hotspot</a>
@@ -35,18 +37,21 @@
 	<form onsubmit="ValidateEmail()" method="post">
  		<div class="contents">
 			<h2>
-				Log in
+				LOG IN
 			</h2>
-    		<b>Username</b><input type="text" placeholder="Enter Email" id="email" name="email" required><br>
-    		<label for="psw"><b>Password</b></label>
+			<label for="username">Username:</label>
+			<input type="text" placeholder="Enter Email" id="email" name="email" required><br>
+    		<label for="psw">Password:</label>
     		<input type="password" placeholder="Enter Password" id="psw" name="password" required><br>
 			<label><br>
       		<input type="checkbox" checked="checked" id="remember"> Remember me
 			</label><br>
-			<button type="submit" name="button">Login</button><br><?php include 'loginscript.php' ?><br>
-			<button type="button" class="cancelbtn">Cancel</button><br>
-			<span class="psw"><a href="#">Forgot password?</a></span>
-  		</div>
+			<button type="submit" name="button" class="submitbtn">Login</button><br><?php include 'loginscript.php' ?>
+			<div class="container">
+				<button type="button" class="cancelbtn">Cancel</button>
+				<span class="link">Forgot <a href="#">password?</a></span>
+			</div>
+	</div>
 	</form>
 	<!--The footer of the webpage-->
 	<div class="footer">

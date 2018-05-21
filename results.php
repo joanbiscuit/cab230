@@ -18,11 +18,11 @@
 		<!--The links to other pages in the website-->
 		<div class="topnav">
 			<a href="homepage.php">Homepage</a> 
-			<a href="">Hotspots</a> 
+			<a href="hotspots.php">Hotspots</a> 
 			<a href="">Recent reviews</a> 
 			<!--Dropdown for the search buttons-->
 			<div class="dropdown">
-				<a href="">Search</a>
+				<button class="dropbtn">Search</button>
 				<div class="dropdown-content">
 					<a href="searchname.php">Keywords</a>
 					<a href="nearesthotspot.php">Nearest hotspot</a>
