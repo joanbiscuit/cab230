@@ -1,5 +1,5 @@
 .wrapper{
-	width: auto;
+	width:auto;
 }
 body {
 	background-image: url("brisbanecity.jpg");
@@ -7,22 +7,46 @@ body {
 	background-size: fill;
 	background-position: center;
 	background-attachment: fixed;
+	
 }
-.contents {
-	/* Center */
-	margin: auto;
-	width: 50%;
-	padding: 10px;
-	text-align:left;
-	margin-top: 100px;
-	margin-bottom: 100px;
+.content{
+	float:middle;
+	overflow:hidden;
+}
+.result{
+	
 	background-color: #d1d1e0;
-	/* border properties */
+	padding:16px;
 	border-style: hidden;
 	border-radius: 25px;
+	width:auto;
+}
+.homepage{	
+	/* border properties */
 	height: auto;
-	align-content: center;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	position:fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -300px;
+}
+.welcome{
+	font-size:40px;
+	background-color: #d1d1e0;
+	padding:16px;
+	border-style: hidden;
+	border-radius: 25px;
+	width:auto;
+}
+
+.search{
+	
+	float:left;
+	background-color: #d1d1e0;
+	padding:16px;
+	border-style: hidden;
+	border-radius: 25px;
+	width:auto;
 }
 .header {
 	overflow: hidden;
@@ -39,18 +63,10 @@ body {
 	top: 0;
 	left: 0;
 }
-h2 {
-	text-align:center;
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	color: blue;
-}
 /* The navigation bar container */
 .topnav {
-	background-color: #f0f0f5;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 16px;
-    color: black;
-	border: none;
+	background-color:#e0e0d1;
+	overflow: hidden;	
 }
 /* Navigation bar links */
 .topnav a{
@@ -67,49 +83,6 @@ h2 {
 	color:white;
 	text-decoration:none;
 }
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-.dropbtn {
-    background-color:#f0f0f5;
-    color: black;
-    padding: 16px;
-    font-size: 16px;
-	border: none;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color:black;
-	color:white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-	background-color: black;
-	color: red;
-}
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-.dropdown:hover .dropbtn {
-	background-color:black;
-	color: white;
-}
 .login {
 	float: right;
 }
@@ -124,67 +97,68 @@ h2 {
 	position: fixed;
 	left: 0;
 	bottom: 0;
-	width: 100%;
+	width: 100%
 }
-/*Log in and sign up*/
-input[type=text], input[type=password], input[type=date], input[type=number], select {
-	width: 100%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	box-sizing: border-box;
-}
-/*Log in and sign up submit button*/
-.submitbtn, .cancelbtn, .searchbtn {
-	background-color: #4CAF50;
-	color: white;
-	padding: 14px 20px;
-	margin: 8px 0;
-	border: none;
-	cursor: pointer;
-	width: 100%;
-}
-/*Add a hover effect for cancel and submit buttons*/
-.submitbtn:hover, .cancelbtn:hover, .searchbtn:hover {
-	opacity: 0.8;
-}
-/*Extra style for the cancel button*/
-.cancelbtn {
-	width: auto;
-	padding: 10px 18px;
-	background-color: #f44336;
-}
-.searchbtn{
-	width: auto;
-	padding: 10px 18px;
-	background-color: #5c5c8a;
-	float: center;
-}
-/* The "Forgot password" text */
-span.link {
-    float: right;
-    padding-top: 16px;
-}
-.container {
-	background-color:#a3a3c2;
-	/* Center */
-	margin: auto;
-	padding: 10px;
-	/* border properties */
+.logout{
+		float:left;
+	background-color: #d1d1e0;
+	padding:16px;
 	border-style: hidden;
 	border-radius: 25px;
-	height: auto;
-	align-content: center;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width:auto;
+	position:fixed;
+	top:40%;
+	left:40%;
 }
-.suburboption {
-	position: relative;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+.loginform{
+	float:left;
+	background-color: #d1d1e0;
+	padding:16px;
+	border-style: hidden;
+	border-radius: 25px;
+	width:auto;
+	position:fixed;
+	top:40%;
+	left:40%;
 }
-h3 {
-	text-align: center;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+.signup{
+	float:left;
+	background-color: #d1d1e0;
+	padding:16px;
+	border-style: hidden;
+	border-radius: 25px;
+	width:auto;
+	position:fixed;
+	top:30%;
+	left:35%;
+}
+.search h2{
+	text-align:center;
+	background-color:#e0e0d1;
+}
+.review{
+
+	background-color: #d1d1e0;
+	padding:16px;
+	border-style: hidden;
+	border-radius: 25px;
+	width:auto;	
+}
+.title{
+	float:left;
+	background-color: #d1d1e0;
+	padding:16px;
+	border-style: hidden;
+	border-radius: 25px;
+	width:auto;	
+}
+.writereview{
+	
+	background-color: #d1d1e0;
+	padding:16px;
+	border-style: hidden;
+	border-radius: 25px;
+	width:auto;	
 }
 .checked{
 	color:gold;

@@ -1,6 +1,10 @@
 <html>
 <?php
-session_start();
+//If the session has not been started
+if (session_id()==''){
+	session_start();
+}
+//Function to check if the user is logged in
 function IsLoggedIn(){
 	if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
 		echo "<a href='logout.php'>Logout</a>";
