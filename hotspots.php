@@ -15,33 +15,16 @@
 		<h1>Brisbane Hotspot Reviewer</h1>
 		<hr>
 	</div>
-		<!--The links to other pages in the website-->
-		<div class="topnav">
-			<a href="homepage.php">Homepage</a> 
-			<a href="hotspots.php">Hotspots</a> 
-			<a href="">Recent reviews</a> 
-			<!--Dropdown for the search buttons-->
-			<div class="dropdown">
-                <button class="dropbtn">Search</button>
-				<div class="dropdown-content">
-					<a href="searchname.php">Keywords</a>
-					<a href="nearesthotspot.php">Nearest hotspot</a>
-			    </div>
-			</div>
-		<!--The links to login/signup are on the other side of the header-->
-		<div class="login">
-			<a href="login.php">Log in</a> 
-			<a href="signup.php">Sign up</a>
-		</div>
+	<!--The links to other pages in the website-->
+	<div class="topnav">
+		<?php include 'topnav.php'?>
 	</div>
-    <!-- Search pages-->
-    <div class='contents'>
-        <h2>Available Hotspots</h2>
-        <?php include 'hotspotlist.php';?>
-    </div>
+    <!--Content in the webpage-->
+    <?php include 'searchform.php';?>
 	<div class="footer">
 		<!--Links of all the Webpages-->
 		<p>&copy; 2018 Brisbane Hotspot Reviewer</p>
 	</div>
 </div>
 </body>
+</html>

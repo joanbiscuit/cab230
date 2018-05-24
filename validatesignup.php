@@ -31,10 +31,14 @@ if(isset($_POST["button"])){
 				$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pword);
 				// set the PDO error mode to exception
 				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				$sql = $conn->prepare("INSERT INTO members (email, password, birthday) VALUES ('".$_POST["email"]."','".$password."','".$_POST["dob"]."')");
+				$sql = $conn->prepare("INSERT INTO members (email, password, birthday, username) VALUES ('".$_POST["email"]."','".$password."','".$_POST["dob"]."','".$_POST["username"]."')");
 				// use exec() because no results are returned
 				$sql->execute();
-				
+				if (session_status() == PHP_SESSION_NONE){
+					session_start();
+				}
+				$_SESSION['loggedin'] = true;
+				$_SESSION['username'] = $result[0]['username'];
 				}
 			catch(PDOException $e)
 				{

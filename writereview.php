@@ -1,12 +1,13 @@
 <?php
 	if(isset($_POST["submitreview"])){
-		if (isset($_SESSION["username"])){
+		if (isset($_SESSION["email"])){
 			if ($_SESSION['loggedin']==true){
-				$email = $_SESSION['username'];
-				try { 
+				$email = $_SESSION['email'];
+				$date = date("l jS \of F Y h:i:s A").;
+				try {
 					$pdo = new PDO('mysql:host=localhost;dbname=hotspot_database', 'root', '');
 					$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-					$sql = $pdo->prepare("INSERT INTO reviews (title, review, email, rating, name, date_posted) VALUES ('".$_POST["title"]."','".$_POST["comment"]."','".$email."','".$_POST["rating"]."','".$_GET["name"]."',".date("Y-m-d").")");
+					$sql = $pdo->prepare("INSERT INTO reviews (title, review, email, rating, name, date_posted) VALUES ('".$_POST["title"]."','".$_POST["comment"]."','".$email."','".$_POST["rating"]."','".$_GET["name"]."','".$date."'");
 					// use exec() because no results are returned
 					$sql->execute();
 				}
@@ -16,9 +17,9 @@
 				$conn = null;
 			}
 		
-	else{
-		echo"You must be logged in to submit a review!";
-	}
-	}
+			else{
+				echo"You must be logged in to submit a review!";
+			}
+		}
 	}
 ?>

@@ -10,8 +10,6 @@ function ValidateEmail()
 				return (false)
 			}
 }
-
-
 function ValidatePasswordSignup()
 {
 	var password = (document.getElementById("psw").value)
@@ -40,7 +38,6 @@ function ValidatePasswordSignup()
 			return (false)
 		}
 }
-
 function ValidateSignup(){
 	if (ValidateEmail() && ValidatePasswordSignup()){
 		return(true);
@@ -60,4 +57,7 @@ function searchPageValidate(){
 		window.alert("Enter a valid postcode");
 		return false;
 	}
+}
+function goBack() {
+    window.history.back();
 }
