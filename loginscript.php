@@ -12,11 +12,11 @@
 				// set the PDO error mode to exception
 				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Create an SQL statement that retrieves the email and password
-				$sql = $conn->prepare("SELECT password, email, username FROM members WHERE email='".$_POST["email"]."'");
+				$checkSignIn = $conn->prepare("SELECT password, email FROM members WHERE email='".$_POST["email"]."'");
 				// use execute() because no results are returned
-				$sql->execute();
+				$checkSignIn->execute();
 				//Save the result into a variable
-				$result=$sql->fetchAll(PDO::FETCH_ASSOC);
+				$result=$checkSignIn->fetchAll(PDO::FETCH_ASSOC);
 				//Check to see whether the fetch returned an array or not
 				if ($result != null){
 					//If the password matches, log in
@@ -24,9 +24,11 @@
 						if (session_status() == PHP_SESSION_NONE){
 							session_start();
 						}
+						//Fetch the username from the database now that the email and password match
+						$getUsername=$conn->prepare("SELECT username FROM usernames WHERE email='".$_POST['email']."'");
 						$_SESSION['loggedin'] = true;
 						$_SESSION['username'] = $result[0]['username'];
-						$_SESSION['email'] = $result[0]['email'];
+						header('Location: homepage.php');
 					}
 					//If the password does not match, return an error
 					else{

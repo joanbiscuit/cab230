@@ -4,6 +4,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Brisbane Hotspot Reviewer</title>
 <script type="text/javascript" src="javascript.js"></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDt0-G_rlX5XwmwOJfd_yYBesB_bZc3bfU" type="text/javascript">
+</script>
 </head>
 <body>
 <!--The wrapper wraps around the entire webpage to keep it a certain size-->
