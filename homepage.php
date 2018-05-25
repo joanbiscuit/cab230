@@ -21,6 +21,8 @@
 	<!--Content in the webpage-->
 	<div class="contents">
 		<form onsubmit="searchPageValidate();" method="get" action = "results.php">
+			<p>This website provides information and locations of the local hotspots around Brisbane provided by the Brisbane City Council.</p>
+			<hr>
 			<h2>Search Keywords</h2>
 			Name: <input type="text" name="selectname"></br>
 			Suburb: <br>

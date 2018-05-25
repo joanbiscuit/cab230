@@ -10,13 +10,14 @@
 	$addressData=$addressSelect->fetchAll(PDO::FETCH_ASSOC);
 	$reviewsSelect->execute();
 	$reviewsData=$reviewsSelect->fetchAll(PDO::FETCH_ASSOC);
-	
 	//Average all the ratings
 	$averageRating=0;
 	foreach ($reviewsData as $rating){
 		$averageRating+=$rating['rating'];
 	}
-	$averageRating=$averageRating/sizeof($reviewsData); //length of ratings
+	if (sizeof($reviewsData)!=0){
+		$averageRating=$averageRating/sizeof($reviewsData); //length of ratings
+	}
 	echo "<h2>".$_GET["name"]."</h2>";
 	echo "<div class='rating'>";
 	for ($i=0; $i<round($averageRating,0,PHP_ROUND_HALF_DOWN); $i+=1){
@@ -41,6 +42,5 @@
 			echo "<span class='fa fa-star'></span>";
 		}
 		echo"</div><hr>";
-		
 	}
 ?>

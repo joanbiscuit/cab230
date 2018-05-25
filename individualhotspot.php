@@ -26,7 +26,6 @@
 					}
 			}
 		function nearestHotspot(position){
-			
 			var lat2=";echo $latitude; echo";			
 			var lng2=";echo $longitude; echo";	
 			var lat1=position.coords.latitude;

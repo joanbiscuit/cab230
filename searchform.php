@@ -44,7 +44,6 @@
 		}
 		//Close of the variable delcaration
 		echo "];";
-
 		//Create a map for all of the results to go into
 		//Echo the javascript
 		echo "
@@ -53,17 +52,13 @@
 				center: new google.maps.LatLng(-27.4698, 153.0251),
 				mapTypeId: google.maps.MapTypeId.ROADMAP
 			});
-
 			var infowindow = new google.maps.InfoWindow();
-
 			var marker, i;
-
 			for (i = 0; i < locations.length; i++) {  
 				marker = new google.maps.Marker({
 				position: new google.maps.LatLng(locations[i][1], locations[i][2]),
 				map: map
-				});	
-
+				});
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
           infowindow.setContent('<a href=\"individual_result.php?name='+locations[i][0]+'\">'+locations[i][0]+'</a>');
@@ -75,7 +70,7 @@
 		echo "</script>";
 		echo "<h2>Search Results</h2>";
             foreach ($searchesData as $row){
-                ?><div class='result'>
+                ?><div class="result">
 					<hr>
 					<h3><?=$row["name"]?></h3>
 					<img src="<?=$row["picture"]?>" alt="<?=$row["name"]?>"><br>

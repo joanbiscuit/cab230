@@ -23,6 +23,8 @@ body {
 	height: auto;
 	align-content: center;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	overflow: hidden;
+	align: middle;
 }
 .header {
 	overflow: hidden;
@@ -117,10 +119,7 @@ input[type=text], input[type=password], input[type=date], input[type=number], se
 	background-color: #5c5c8a;
 }
 .searchbtn {
-	width: auto;
-	padding: 10px 18px;
 	background-color: #5c5c8a;
-	align-content: center;
 }
 .backbtn {
 	background-color: #000080;
@@ -180,7 +179,25 @@ textarea {
 	text-decoration: bold;
 	text-align: center;
 }
-.results img {
+.result img{
 	max-width: 100%;
-	max-height: 100%;
+	height: auto;
+}
+@media only screen and (max-width:600px) {
+	.contents {
+		/* Center */
+		width: 90%;
+		padding: 10px;
+		margin-top: 25px;
+		margin-bottom: 75px;
+		background-color: #d1d1e0;
+		/* border properties */
+		border-style: hidden;
+		border-radius: 25px;
+		height: auto;
+		align-content: center;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		overflow: hidden;
+		align: middle;
+	}
 }

@@ -16,11 +16,12 @@
 	<div class="topnav">
 		<?php include 'topnav.php' ?>
 	</div>
+	<div class="contents">
 	<?php
 		$_SESSION['loggedin']=false;
 		$_SESSION['username']=null;
+		$_SESSION['email']=null;
 	?>
-	<div class="contents">
 	You have successfully logged out.
 	</div>
 	<!--The footer of the webpage-->
