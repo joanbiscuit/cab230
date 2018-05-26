@@ -39,6 +39,8 @@ if(isset($_POST["button"])){
 				}
 				$_SESSION['loggedin'] = true;
 				$_SESSION['username'] = $result[0]['username'];
+				$_SESSION['email']=$_POST['email'];
+				header("Location: homepage.php");
 				}
 			catch(PDOException $e)
 				{
